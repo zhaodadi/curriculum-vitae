@@ -25,6 +25,18 @@ module.exports = {
             options: { minimize: true }
           }
         ]
+      },
+      { 
+        test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/, 
+        use: [
+          {
+              loader: 'url-loader',
+              options: { 
+                  limit: 8000, // Convert images < 8kb to base64 strings
+                  name: 'images/[hash]-[name].[ext]'
+              } 
+          }
+        ]
       }
     ]
   },
