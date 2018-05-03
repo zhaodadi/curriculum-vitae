@@ -1,12 +1,13 @@
 /** 
  * ===================================================================
- * main js
+ * kards js
  *
  * ------------------------------------------------------------------- 
  */ 
 
 var imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin( $ );
+var Masonry = require('masonry-layout');
 
 "use strict";
 /*---------------------------------------------------- */
@@ -105,14 +106,15 @@ handler: function(direction) {
 ------------------------------------------------------ */
 var containerProjects = $('#folio-wrapper');
 
-containerProjects.imagesLoaded( function() {
-
-	containerProjects.masonry( {		  
-		itemSelector: '.folio-item',
-		resize: true 
+if(containerProjects.length > 0) {
+	containerProjects.imagesLoaded( function() {
+		// init with selector
+		var msnry = new Masonry( containerProjects, {		  
+			itemSelector: '.folio-item',
+			resize: true 
+		});
 	});
-
-});
+}
 
 
 /*----------------------------------------------------*/
