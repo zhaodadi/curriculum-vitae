@@ -5,8 +5,8 @@
  * ------------------------------------------------------------------- 
  */ 
 
-require("imagesloaded");
-
+var imagesLoaded = require('imagesloaded');
+imagesLoaded.makeJQueryPlugin( $ );
 
 "use strict";
 /*---------------------------------------------------- */
